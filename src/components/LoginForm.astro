@@ -42,7 +42,7 @@ const { action } = Astro.props;
 
 <style>
   .login-form {
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
     padding: 2rem;
     background-color: #23262d;
@@ -50,7 +50,6 @@ const { action } = Astro.props;
     border: 1px solid transparent;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: auto;
   }
 
   .login-form:hover {
@@ -84,7 +83,7 @@ const { action } = Astro.props;
   }
 
   .input-group input {
-    width: 100%;
+    width: 90%;
     padding: 0.8rem;
     border-radius: 6px;
     border: 1px solid rgba(var(--accent-light), 0.2);
@@ -92,6 +91,8 @@ const { action } = Astro.props;
     color: white;
     font-size: 1rem;
     transition: all 0.4s ease;
+    display: block;
+    margin: 0 auto;
   }
 
   .input-group input:focus {
@@ -101,7 +102,7 @@ const { action } = Astro.props;
   }
 
   .login-button {
-    width: 100%;
+    width: 50%;
     padding: 1rem;
     border-radius: 6px;
     border: none;
@@ -111,6 +112,8 @@ const { action } = Astro.props;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
   }
 
   .login-button:hover {
