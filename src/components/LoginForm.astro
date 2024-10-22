@@ -24,16 +24,18 @@ const { action } = Astro.props;
       type="password"
       id="password"
       name="password"
-      placeholder="Enter your password"
+      placeholder="Ingresa tu contraseña"
       required
     />
   </div>
   <button type="submit" class="login-button">Iniciar sesión</button>
-  <p>
-    Hecho con ❤️ por <a
+  <p class="text-gradient">
+    Hecho con ❤️ por
+    <a
       href="https://agenciaideaspro.cl/"
       target="_blank"
-      rel="noopener noreferrer">Agencia Ideas Pro</a
+      rel="noopener noreferrer"
+      class="hover-effect">Agencia Ideas Pro</a
     >
   </p>
 </form>
@@ -41,14 +43,14 @@ const { action } = Astro.props;
 <style>
   .login-form {
     max-width: 400px;
-    margin: auto;
+    width: 100%;
     padding: 2rem;
     background-color: #23262d;
     border-radius: 8px;
     border: 1px solid transparent;
     transition: all 0.4s ease;
-    position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
   }
 
   .login-form:hover {
@@ -115,18 +117,129 @@ const { action } = Astro.props;
     background-color: rgb(var(--accent-dark));
   }
 
-  .signup-link {
-    margin-top: 1rem;
+  .text-gradient {
     text-align: center;
+    color: rgb(var(--accent-light));
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hover-effect {
+    position: relative;
+    color: rgb(var(--accent));
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .hover-effect:hover {
+    color: rgb(var(--accent-dark));
+  }
+
+  .hover-effect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(var(--accent-light));
+    transition: width 0.4s ease;
+  }
+
+  .hover-effect:hover::after {
+    width: 100%;
+  }
+
+  .text-gradient a {
     color: rgb(var(--accent-light));
   }
 
-  .signup-link a {
-    color: rgb(var(--accent));
-    text-decoration: none;
+  @media (max-width: 1200px) {
+    .login-title {
+      font-size: 1.4rem;
+    }
+
+    .login-button {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
   }
 
-  .signup-link a:hover {
-    text-decoration: underline;
+  @media (max-width: 992px) {
+    .login-title {
+      font-size: 1.2rem;
+    }
+
+    .login-button {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .input-group input {
+      padding: 0.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login-title {
+      font-size: 1.1rem;
+    }
+
+    .login-button {
+      padding: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .input-group input {
+      padding: 0.6rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .login-form {
+      padding: 1.5rem;
+    }
+
+    .login-title {
+      font-size: 1rem;
+    }
+
+    .login-button {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .input-group input {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .text-gradient {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .login-form {
+      padding: 1rem;
+    }
+
+    .login-title {
+      font-size: 0.9rem;
+    }
+
+    .login-button {
+      padding: 0.4rem;
+      font-size: 0.7rem;
+    }
+
+    .input-group input {
+      padding: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .text-gradient {
+      font-size: 0.7rem;
+    }
   }
 </style>
